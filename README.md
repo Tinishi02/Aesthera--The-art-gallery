@@ -3,7 +3,7 @@ Aesthera Art Gallery 🎨
 Aesthera Art Gallery is a modern and visually appealing web-based art gallery designed to showcase beautiful artworks in an organized and aesthetic way.
 The website provides users with a simple and immersive experience to explore different art collections online.
 
-🌐 Live Demo:
+🌐 Live Demo:https://github.com/Tinishi02/Aesthera--The-art-gallery.git
 
 
 📌 Project Overview
