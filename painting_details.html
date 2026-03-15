@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Details - Aesthera</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand-font" href="index.html" style="font-size: 1.5rem;">Aesthera</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="my_orders.html">Orders</a></li>
+      </ul>
+      <ul class="navbar-nav" id="authNav"></ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container main-content mt-5 mb-5 px-3">
+    <div class="row align-items-center" id="detailContainer">
+        <!-- Details populated by JS -->
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paintingId = urlParams.get('id');
+        const container = document.getElementById('detailContainer');
+
+        if (!paintingId) {
+            window.location.href = 'index.html';
+            return;
+        }
+
+        const painting = getPaintingById(paintingId);
+        if (!painting) {
+            container.innerHTML = '<div class="alert alert-danger">Painting not found.</div>';
+            return;
+        }
+
+        const user = getCurrentUser();
+        let actionHtml = '';
+
+        if (user) {
+            if (user.role === 'customer') {
+                actionHtml = `<button onclick="handleOrder(${painting.id})" class="btn btn-accent btn-lg px-5 py-3 shadow-sm rounded-pill brand-font" style="font-size: 1.2rem;">Place Order</button>`;
+            } else {
+                actionHtml = `<div class="alert alert-info">Admins cannot place orders. Enjoy the gallery!</div>`;
+            }
+        } else {
+            actionHtml = `
+                <a href="login.html" class="btn btn-outline-primary btn-lg px-4">Log in to Order</a>
+                <a href="register.html" class="btn btn-accent btn-lg px-4">Register</a>
+            `;
+        }
+
+        container.innerHTML = `
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="painting-card overflow-hidden rounded shadow-sm">
+                    <img src="${painting.image_url}" class="img-fluid w-100" alt="${painting.title}" onerror="this.src='https://via.placeholder.com/800x600'" style="object-fit: contain; max-height: 70vh; background-color: #f1f1f1;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1 class="display-5 brand-font mb-3">${painting.title || painting.abstract}</h1>
+                <h3 class="text-primary mb-4">$${parseFloat(painting.price).toLocaleString('en-US', {minimumFractionDigits: 2})}</h3>
+                <div class="mb-4">
+                    <h5 class="brand-font">Description</h5>
+                    <p class="lead" style="font-size: 1.1rem; line-height: 1.7; color: #555;">${painting.description}</p>
+                </div>
+                <hr class="my-4">
+                <div class="d-grid gap-2 d-md-block">
+                    ${actionHtml}
+                </div>
+                <div class="mt-4">
+                     <a href="gallery.html" class="text-decoration-none text-muted">← Back to Gallery</a>
+                </div>
+            </div>
+        `;
+    });
+
+    function handleOrder(id) {
+        if (placeOrder(id)) {
+            alert('Order placed successfully!');
+            window.location.href = 'my_orders.html';
+        } else {
+            alert('Failed to place order.');
+        }
+    }
+</script>
+</body>
+</html>

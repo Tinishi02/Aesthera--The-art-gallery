@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Aesthera</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"
+                style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Aesthera</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_orders.html">Orders</a></li>
+                </ul>
+                <ul class="navbar-nav" id="authNav">
+                    <!-- JS will populate auth links based on login state -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content mt-5 mb-5 px-3">
+        <div class="text-center mb-5">
+            <h1 class="display-4 brand-font fw-bold" style="color: var(--primary-color);">Our Full Collection</h1>
+            <p class="lead text-muted">Browse our curated collection of extraordinary paintings below.</p>
+        </div>
+
+        <!-- Gallery Grid for full details -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="fullGalleryContainer">
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://cdn.britannica.com/78/43678-050-F4DC8D93/Starry-Night-canvas-Vincent-van-Gogh-New-1889.jpg"
+                        class="card-img-top" alt="Starry Night Replica" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Starry Night Replica</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $150.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">A
+                            beautiful starry night scene showcasing swirling winds and dramatic contrasting colors
+                            representing emotion against a calm rural village scene.</p>
+                        <a href="painting_details.html?id=1"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://images.stockcake.com/public/d/e/4/de4056e1-0ebb-412c-a91c-14b796704968_large/oceanic-art-waves-stockcake.jpg"
+                        class="card-img-top" alt="Abstract Waves" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Abstract Waves</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $200.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">Blue
+                            and white abstract art. Evokes the chaotic calming power of the deep ocean waves crashing
+                            against each other in white seafoam texture.</p>
+                        <a href="painting_details.html?id=2"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://artnow.ru/img/1154000/1154567.jpg" class="card-img-top" alt="Mountain View"
+                        style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Mountain View</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $120.50</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">Serene
+                            mountain landscape painting showcasing pine trees framing a grand vista in a beautiful
+                            golden evening hour glow.</p>
+                        <a href="painting_details.html?id=3"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://media.craiyon.com/2025-08-11/IWSGziNRT2G_TNig-s6w-w.webp" class="card-img-top"
+                        alt="Vibrant Fields" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Vibrant Fields</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $180.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">An
+                            impressionist painting featuring vivid, colorful blooming flowers stretching across a
+                            sun-drenched pastoral landscape.</p>
+                        <a href="painting_details.html?id=4"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://www.shutterstock.com/image-vector/vibrant-abstract-cityscape-golden-yellows-600nw-2585745305.jpg"
+                        class="card-img-top" alt="Urban Geometry" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Urban Geometry</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $210.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">A
+                            sleek modern piece heavily focused on angular lines, structured grid patterns, and muted
+                            concrete colors representing the soul of the city.</p>
+                        <a href="painting_details.html?id=5"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://printawallpaper.com/wp-content/uploads/2020/07/Golden_autumn_d-1.jpg"
+                        class="card-img-top" alt="Golden Autumn" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Golden Autumn</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $175.50</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">Deep
+                            red and gold foliage lines a quiet forest pathway, capturing the fleeting beautiful warmth
+                            of the autumn season.</p>
+                        <a href="painting_details.html?id=6"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?auto=format&fit=crop&q=80&w=800"
+                        class="card-img-top" alt="The Wanderer" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">The Wanderer</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $290.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">A
+                            solitary figure standing against an imposing, misty backdrop of swirling clouds and dramatic
+                            cliff faces. A romantic, somber piece.</p>
+                        <a href="painting_details.html?id=7"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/midnight-city-ash-hussein.jpg"
+                        class="card-img-top" alt="Midnight Cityscape" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Midnight Cityscape</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $130.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">Bright
+                            neon streaks contrast sharply against the dark ink canvas, illustrating the bustling night
+                            life of a metropolitan highway.</p>
+                        <a href="painting_details.html?id=8"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://img.freepik.com/premium-photo/photo-beautiful-different-colored-oil-painting-flowers_763111-113691.jpg"
+                        class="card-img-top" alt="Floral Symphony" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Floral Symphony</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $145.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">A
+                            dense, tightly painted composition of various spring flowers overlapping each other in a
+                            celebration of botanical life.</p>
+                        <a href="painting_details.html?id=9"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://images.saatchiart.com/saatchi/1342371/art/9355351/8418459-HSC00923-7.jpg"
+                        class="card-img-top" alt="Silent Winter" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Silent Winter</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">$95.00
+                        </p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">A
+                            minimalist piece showing sparse, leafless black trees against a stark white background of
+                            falling snow. Beautiful in its simplicity.</p>
+                        <a href="painting_details.html?id=10"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://afremov.com/media/catalog/product/1/1/11211_desert_mirage_on_mercury_j82h5krp0bjlnobc.jpg"
+                        class="card-img-top" alt="Desert Mirage" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Desert Mirage</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $165.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">Warm
+                            terracotta, orange, and hazy yellow tones blend to form beautiful sweeping sand dunes
+                            beneath a harsh midday sun.</p>
+                        <a href="painting_details.html?id=11"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card painting-card h-100 shadow-sm border-0">
+                    <img src="https://cdn.kreezalid.com/kreezalid/556408/catalog/8092/72/1000x1000_abstractouterspace_zgjwu_263063294.jpg"
+                        class="card-img-top" alt="Surreal Cosmos" style="height: 350px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title brand-font fs-4 text-dark mb-2">Surreal Cosmos</h5>
+                        <p class="painting-price mb-3 fs-5" style="color: var(--accent-color); font-weight: 600;">
+                            $340.00</p>
+                        <p class="card-text text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.6;">An
+                            experimental, highly imaginative piece blending the familiar lines of human profiles with
+                            the chaotic, starry depths of a nebula in space.</p>
+                        <a href="painting_details.html?id=12"
+                            class="btn btn-outline-dark mt-4 w-100 py-2 text-uppercase fw-semibold"
+                            style="letter-spacing: 0.5px;">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0" style="font-family: 'Playfair Display', serif;">&copy; <span id="year"></span> Aesthera Art
+                Gallery. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Logic and Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- No longer dynamically rendering gallery items, hardcoded in HTML as requested -->
+</body>
+
+</html>
